@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  form(action=`/feedback/edit/${feed._id}`, method='post')
+    label(for="rating") Rating:
+    br
+    input(type='number', name='rating', step='1', min='1', max='5', value=feed.rating, required)
+    br
+    label(for='message') Feedback:
+    br
+    .row
+      .col-4
+        .card
+          textarea#feedbackM(type='text', name='message', rows='4' required)=feed.message
+    button(type="submit") Update Profile

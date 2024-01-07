@@ -1,0 +1,6 @@
+C:\Users\MCFox\Desktop\EcommerceSite\obj\Debug\EcommerceSite.njsproj.AssemblyReference.cache
+C:\Users\MCFox\Desktop\EcommerceSite\obj\Debug\EcommerceSite.njsproj.CoreCompileInputs.cache
+C:\Users\MCFox\Desktop\EcommerceSite\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\MCFox\Documents\GitHub\EcommerceSite\src\EcommerceSite\obj\Debug\EcommerceSite.njsproj.AssemblyReference.cache
+C:\Users\MCFox\Documents\GitHub\EcommerceSite\src\EcommerceSite\obj\Debug\EcommerceSite.njsproj.CoreCompileInputs.cache
+C:\Users\MCFox\Documents\GitHub\EcommerceSite\src\EcommerceSite\bin\Microsoft.NodejsTools.WebRole.dll

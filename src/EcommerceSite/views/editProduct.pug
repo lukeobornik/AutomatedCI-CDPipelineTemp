@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  form(action=`/products/myProducts/edit/${product._id}`, method='post')
+    label(for='name') Product Name:
+    br
+    input(type='text', id='name', name='name', value=product.name, required)
+    br
+    label(for='description') Description:
+    br
+    textarea(id='description', name='description', rows='4', required)= product.description
+    br
+    label(for='quantity') Quantity:
+    br
+    input(type='number', id='quantity', name='quantity', value=product.quantity, required)
+    br
+    label(for='price') Price:
+    br
+    input(type='number', id='price', name='price', step='0.01', value=product.price, required)
+    br
+    button(type='submit') Update Product
