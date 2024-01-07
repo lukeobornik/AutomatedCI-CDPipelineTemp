@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+    script(src='/socket.io/socket.io.js')
+    script(src='https://code.jquery.com/jquery-3.6.4.min.js')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css', integrity='sha384-T9EkiXioi3eTeWEPK1Ytkg6jJgKHEAh1g9S0AIe7j/ZjXRlFy/JW+W+99UlgfuXT', crossorigin='anonymous')
+  
+  body
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
+    script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js', integrity='sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofTQj9WUAfyT62n0pEL0bv5luRM2Ay', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', integrity='sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyJffdg00l7uNUb3AOp6HKyoC5SlyM1qXb', crossorigin='anonymous')
+    nav.navbar.navbar-expand-lg.navbar-light
+        a.navbar-brand(href='/index') EcommerceSite
+
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+
+        div#navbarNav.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+              each item in ['Index', 'Products', 'Chat', 'Feedback']
+                li.nav-item
+                  a.nav-link(href='/' + item)= item
+              if logged
+                li.nav-item
+                  a.nav-link(href='/profile') Profile
+                li.nav-item
+                  a.nav-link(href='/logout') Logout
+              else
+                li.nav-item
+                  a.nav-link(href='/Auth') Auth
+                li.nav-item
+                  a.nav-link(href='/Auth/login') Login
+                li.nav-item
+                  a.nav-link(href='/Auth/register') Register
+
+    block content

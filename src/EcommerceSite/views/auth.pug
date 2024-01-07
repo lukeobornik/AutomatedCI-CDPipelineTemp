@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Please  Login or Register
+  each item in ['Login', 'Register']
+    button(type="button")
+        a(href='/auth/' + item)= item

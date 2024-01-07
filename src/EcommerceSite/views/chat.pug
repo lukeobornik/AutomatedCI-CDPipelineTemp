@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  .row
+    #messages
+    .col-12
+          form#form(action='/chat', method='post')
+            .row
+                .col-6
+                  .card
+                    input#m(type='text')
+                .col-1
+                  .card
+                    button(type='submit') Send
+
+  script.
+    var socket = io();
+    var username = '#{username}'; // Access the username passed from the server
+
+    $('#form').submit(function () {
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
+
+    socket.on('chat message', function (msg) {
+      var newM = '<div class="card-body"><h5>' + username + '</h5>' + msg + '</div>';
+      $('#messages').append($('<div class="card">').html(newM));
+    });

@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome #{username}
+
+  .row
+        .col-12.col-md-6
+          .card
+            .card-body
+              ul
+                  h6.card-title
+                    span.font-weight-bold Email:
+                    br
+                    |  #{user.email}
+                  h6
+                    span.font-weight-bold Username:
+                    br
+                    |  #{user.username}
+                  h6
+                    span.font-weight-bold Password:
+                    br
+                    |  #{user.password}
+
+                  button(type="submit")
+                    a(href=`/profile/edit/${user._id}`)= 'Edit Profile'
+                  button(type="submit")
+                    a(href=`/profile/delete/${user._id}`)= 'Delete Profile'
